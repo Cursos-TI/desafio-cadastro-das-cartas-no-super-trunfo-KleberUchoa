@@ -83,6 +83,7 @@ int main()
     printf("\nÁrea: %.2f km²", area_cidade);
     printf("\nPIB: %.2f bilhões de reais", pib_cidade);
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade);
+   
    // system("pause");
-
+   return 0;
 }
