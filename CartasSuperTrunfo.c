@@ -11,6 +11,8 @@ int main()
     float area_cidade;
     float pib_cidade;
     int pontos_turisticos_cidade;
+    float densidade_populacional;
+    float pib_per_capita;
 
     printf("Inserir dados da primeira carta.\n\n");
     
@@ -22,7 +24,7 @@ int main()
     fgets(cod_carta, sizeof(cod_carta), stdin);
     cod_carta[strcspn(cod_carta, "\n")] = '\0';
 
-    printf("Insira o nome da cidade (sem acentos):\n");
+    printf("Insira o nome da cidade:\n");
     fgets(nome_cidade, sizeof(nome_cidade), stdin);
     nome_cidade[strcspn(nome_cidade, "\n")] = '\0';
     
@@ -37,6 +39,9 @@ int main()
     
     printf("Insira a quantidade de pontos turísticos da cidade: \n");
     scanf("%d", &pontos_turisticos_cidade);
+
+    densidade_populacional = (float) populacao_cidade / area_cidade;
+    pib_per_capita = (float) populacao_cidade / pib_cidade;
     
     printf("\nCarta 1:");
     printf("\nEstado: %s", estado);
@@ -46,6 +51,8 @@ int main()
     printf("\nÁrea: %.2f km²", area_cidade);
     printf("\nPIB: %.2f bilhões de reais", pib_cidade);
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade);
+    printf("\nDensidade Populacional: %.2f hab/km²", densidade_populacional);
+    printf("\nPIB per Capita: %.2f reais", pib_per_capita);
     
     printf("\n\nInserir dados da segunda carta.\n");
     
@@ -74,6 +81,9 @@ int main()
     
     printf("Insira a quantidade de pontos turísticos da cidade: \n");
     scanf("%d", &pontos_turisticos_cidade);
+
+    densidade_populacional = (float) populacao_cidade / area_cidade;
+    pib_per_capita = (float) populacao_cidade / pib_cidade;
     
     printf("\nCarta 2:");
     printf("\nEstado: %s", estado);
@@ -83,6 +93,8 @@ int main()
     printf("\nÁrea: %.2f km²", area_cidade);
     printf("\nPIB: %.2f bilhões de reais", pib_cidade);
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade);
+    printf("\nDensidade Populacional: %.2f hab/km²", densidade_populacional);
+    printf("\nPIB per Capita: %.2f reais", pib_per_capita);
    
    // system("pause");
    return 0;
