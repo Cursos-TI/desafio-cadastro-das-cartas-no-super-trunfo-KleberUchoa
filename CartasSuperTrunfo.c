@@ -13,7 +13,7 @@ int main()
     int pontos_turisticos_cidade_carta_1;
     float densidade_populacional_carta_1;
     float pib_per_capita_carta_1;
-    float super_poder_carta_1;
+    double super_poder_carta_1;
 
     printf("Inserir dados da primeira carta.\n\n");
     
@@ -45,8 +45,9 @@ int main()
     
     pib_per_capita_carta_1 = (float) pib_cidade_carta_1 / populacao_cidade_carta_1;
     
-    super_poder_carta_1 = (float) pontos_turisticos_cidade_carta_1 + (float) populacao_cidade_carta_1 + (float)pib_cidade_carta_1 
-    + (float)area_cidade_carta_1 + (float)(densidade_populacional_carta_1 * -1) + (float) pib_per_capita_carta_1;
+    super_poder_carta_1 = area_cidade_carta_1 + pib_cidade_carta_1 + pib_per_capita_carta_1 + (densidade_populacional_carta_1 * -1)
+    +pontos_turisticos_cidade_carta_1 + (double)populacao_cidade_carta_1;
+    
     
     printf("\nCarta 1:");
     printf("\nEstado: %s", estado_carta_1);
@@ -58,7 +59,7 @@ int main()
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade_carta_1);
     printf("\nDensidade Populacional: %f hab/km²", densidade_populacional_carta_1);
     printf("\nPIB per Capita: %f reais", pib_per_capita_carta_1);
-    printf("\nSuper Poder: %f", super_poder_carta_1);
+    printf("\nSuper Poder: %lf", super_poder_carta_1);
     
     printf("\n\nInserir dados da segunda carta.\n");
     
@@ -71,7 +72,7 @@ int main()
     int pontos_turisticos_cidade_carta_2;
     float densidade_populacional_carta_2;
     float pib_per_capita_carta_2;
-    float super_poder_carta_2;
+    double super_poder_carta_2;
 
     getchar(); //limpar caraceteres do buffer
 
@@ -102,7 +103,7 @@ int main()
     densidade_populacional_carta_2 = (float) (populacao_cidade_carta_2 / area_cidade_carta_2);
     pib_per_capita_carta_2 = (float) (pib_cidade_carta_2 / populacao_cidade_carta_2);
 
-    super_poder_carta_2 =  pontos_turisticos_cidade_carta_2 + populacao_cidade_carta_2 + pib_cidade_carta_2 
+    super_poder_carta_2 =  pontos_turisticos_cidade_carta_2 + (double) populacao_cidade_carta_2 + pib_cidade_carta_2 
     + area_cidade_carta_2 + (densidade_populacional_carta_2 * -1) + pib_per_capita_carta_2;
     
     printf("\nCarta 2:");
