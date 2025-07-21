@@ -30,7 +30,7 @@ int main()
     nome_cidade_carta_1[strcspn(nome_cidade_carta_1, "\n")] = '\0';
     
     printf("Inserir o número de habitantes da cidade:\n");
-    scanf("%ld", &populacao_cidade_carta_1);
+    scanf("%lu", &populacao_cidade_carta_1);
     
     printf("Insira o Produto Interno Bruto da cidade (em bilhões de reais):\n");
     scanf("%f", &pib_cidade_carta_1);
@@ -45,19 +45,20 @@ int main()
     
     pib_per_capita_carta_1 = (float) pib_cidade_carta_1 / populacao_cidade_carta_1;
     
-    super_poder_carta_1 = (float) pontos_turisticos_cidade_carta_1 + populacao_cidade_carta_1;
+    super_poder_carta_1 = (float) pontos_turisticos_cidade_carta_1 + (float) populacao_cidade_carta_1 + (float)pib_cidade_carta_1 
+    + (float)area_cidade_carta_1 + (float)(densidade_populacional_carta_1 * -1) + (float) pib_per_capita_carta_1;
     
     printf("\nCarta 1:");
     printf("\nEstado: %s", estado_carta_1);
     printf("\nCódigo: %s", cod_carta_1);
     printf("\nNome da Cidade: %s", nome_cidade_carta_1);
-    printf("\nPopulação: %ld", populacao_cidade_carta_1);
-    printf("\nÁrea: %.2f km²", area_cidade_carta_1);
-    printf("\nPIB: %.2f bilhões de reais", pib_cidade_carta_1);
+    printf("\nPopulação: %lu", populacao_cidade_carta_1);
+    printf("\nÁrea: %f km²", area_cidade_carta_1);
+    printf("\nPIB: %f bilhões de reais", pib_cidade_carta_1);
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade_carta_1);
-    printf("\nDensidade Populacional: %.2f hab/km²", densidade_populacional_carta_1);
-    printf("\nPIB per Capita: %.2f reais", pib_per_capita_carta_1);
-    printf("\nSuper Poder: %lf", &super_poder_carta_1);
+    printf("\nDensidade Populacional: %f hab/km²", densidade_populacional_carta_1);
+    printf("\nPIB per Capita: %f reais", pib_per_capita_carta_1);
+    printf("\nSuper Poder: %f", super_poder_carta_1);
     
     printf("\n\nInserir dados da segunda carta.\n");
     
@@ -87,7 +88,7 @@ int main()
     nome_cidade_carta_2[strcspn(nome_cidade_carta_2, "\n")] = '\0';
     
     printf("Inserir o número de habitantes da cidade:\n");
-    scanf("%ld", &populacao_cidade_carta_2);
+    scanf("%lu", &populacao_cidade_carta_2);
     
     printf("Insira o Produto Interno Bruto da cidade (em bilhões de reais):\n");
     scanf("%f", &pib_cidade_carta_2);
@@ -101,20 +102,20 @@ int main()
     densidade_populacional_carta_2 = (float) (populacao_cidade_carta_2 / area_cidade_carta_2);
     pib_per_capita_carta_2 = (float) (pib_cidade_carta_2 / populacao_cidade_carta_2);
 
-    super_poder_carta_2 = populacao_cidade_carta_2 + area_cidade_carta_2 + pib_cidade_carta_2
-    + pontos_turisticos_cidade_carta_2 + (densidade_populacional_carta_2 * -1) + pib_per_capita_carta_2;
+    super_poder_carta_2 =  pontos_turisticos_cidade_carta_2 + populacao_cidade_carta_2 + pib_cidade_carta_2 
+    + area_cidade_carta_2 + (densidade_populacional_carta_2 * -1) + pib_per_capita_carta_2;
     
     printf("\nCarta 2:");
     printf("\nEstado: %s", estado_carta_2);
     printf("\nCódigo: %s", cod_carta_2);
     printf("\nNome da Cidade: %s", nome_cidade_carta_2);
-    printf("\nPopulação: %ld", populacao_cidade_carta_2);
-    printf("\nÁrea: %.2f km²", area_cidade_carta_2);
+    printf("\nPopulação: %lu", populacao_cidade_carta_2);
+    printf("\nÁrea: %f km²", area_cidade_carta_2);
     printf("\nPIB: %f bilhões de reais", pib_cidade_carta_2);
     printf("\nNúmero de Pontos Turísticos: %d", pontos_turisticos_cidade_carta_2);
-    printf("\nDensidade Populacional: %.2f hab/km²", densidade_populacional_carta_2);
-    printf("\nPIB per Capita: %.2f reais\n", pib_per_capita_carta_2);
-    printf("\nSuper Poder: %.2f", &super_poder_carta_1);
+    printf("\nDensidade Populacional: %f hab/km²", densidade_populacional_carta_2);
+    printf("\nPIB per Capita: %f reais\n", pib_per_capita_carta_2);
+    printf("\nSuper Poder: %f", super_poder_carta_2);
 
     printf("\n\nComparação de cartas:");
     int i = (populacao_cidade_carta_1 > populacao_cidade_carta_2)? 1 : 0;
